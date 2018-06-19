@@ -3,3 +3,80 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+ul {
+    padding-left: 5%;
+}
+
+.grid-container{
+    display:grid;
+    width: 100%;
+}
+
+.cell-contents{
+    display:flex;
+    width: 100%;
+}
+
+.cell-container{
+    height: 100%;
+    border: 1px solid rgb(206, 206, 206);
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.pop-up-container{
+    border: 1px solid rgb(206, 206, 206);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.description-cell{
+    width: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#description{
+    display: inline-block;
+}
+
+.cell-padding{
+    display: inline-block;
+    width: 50%;
+    padding: 10px;
+}
+
+.pop-up-padding{
+    padding: 10px;
+    width: 50%;
+    display: inline-block;
+}
+
+.cell-container > *{
+    padding: 0px 20px 0px 20px;
+}
+
+.pop-up-container > div{
+    padding: 15px;
+}
+
+#descriptionPopUp{
+    float:right;
+    width: 50%;
+    margin-top: 20px;
+}
+.title-container{
+    padding-bottom: 10px;
+}
+
+.content{
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    right: 0;
+    top: 0;
+    z-index: 1010;
+    min-width: 320px;
+}
