@@ -16,7 +16,7 @@ ul {
 .cell-contents{
     display:flex;
     width: 100%;
-    padding: 20px;
+    padding: 8px 8px 0 8px;
 }
 
 .cell-container{
@@ -27,8 +27,6 @@ ul {
 
 .pop-up-container{
     border: 1px solid rgb(206, 206, 206);
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
 }
 
 .description-cell{
@@ -67,7 +65,7 @@ ul {
     margin-top: 20px;
 }
 .title-container{
-    padding-bottom: 10px;
+
 }
 
 .content{
@@ -83,10 +81,17 @@ ul {
 
 .cell-contents > div:first-child {
     margin-left: 0;
-    width: calc(50% - 10px);
+    width: calc(50% - 4px);
 }
 
 .cell-contents > div {
-    margin: 0 10px;
-    width: calc(50% - 10px);
+    margin: 0 4px;
+    width: calc(50% - 4px);
+}
+
+.cell-contents:last-child {
+    padding-bottom: 8px;
+}
+.cell-contents > div:last-child {
+    margin-right: 0;
 }
