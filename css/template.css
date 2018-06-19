@@ -16,10 +16,10 @@ ul {
 .cell-contents{
     display:flex;
     width: 100%;
+    padding: 20px;
 }
 
 .cell-container{
-    height: 100%;
     border: 1px solid rgb(206, 206, 206);
     padding-top: 15px;
     padding-bottom: 15px;
@@ -79,4 +79,14 @@ ul {
     top: 0;
     z-index: 1010;
     min-width: 320px;
+}
+
+.cell-contents > div:first-child {
+    margin-left: 0;
+    width: calc(50% - 10px);
+}
+
+.cell-contents > div {
+    margin: 0 10px;
+    width: calc(50% - 10px);
 }
