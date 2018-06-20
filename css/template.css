@@ -29,43 +29,12 @@ ul {
     border: 1px solid rgb(206, 206, 206);
 }
 
-.description-cell{
-    width: 50%;
-    padding: 15px;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#description{
-    display: inline-block;
-}
-
-.cell-padding{
-    display: inline-block;
-    width: 50%;
-    padding: 10px;
-}
-
-.pop-up-padding{
-    padding: 10px;
-    width: 50%;
-    display: inline-block;
-}
-
 .cell-container > *{
     padding: 0px 20px 0px 20px;
 }
 
 .pop-up-container > div{
     padding: 15px;
-}
-
-#descriptionPopUp{
-    float:right;
-    width: 50%;
-    margin-top: 20px;
-}
-.title-container{
-
 }
 
 .content{
@@ -102,7 +71,7 @@ ul {
         font-size: 12px;
     }
     .cell-contents{
-        display: inline-block;
+        flex-direction: column;
     }
     .cell-contents > div:first-child{
         width: 100%;
@@ -113,8 +82,7 @@ ul {
         margin-bottom: 10px;
     }
     .cell-contents > div:last-child {
-
-        margin: 0 0px;
+        margin: 0 0;
     }
 }
 
@@ -124,7 +92,7 @@ ul {
         font-size: 13px;
     }
     .cell-contents{
-        display: inline-block;
+        flex-direction: column;
     }
     .cell-contents > div:first-child{
         width: 100%;
@@ -135,8 +103,7 @@ ul {
         margin-bottom: 10px;
     }
     .cell-contents > div:last-child {
-
-        margin: 0 0px;
+        margin: 0 0;
      }
 }
 @media only screen and (max-width:961px) and (min-width: 767px) {
