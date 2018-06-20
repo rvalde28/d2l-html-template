@@ -1,0 +1,102 @@
+.d2l-typography .smith-dialog p {
+  margin: 0;
+}
+body.show-dialog {
+  overflow: hidden;
+}
+.smith-dialog  * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    transition: transform .4s ease-in-out;
+}
+body:not(.show-dialog) .smith-dialog-wrapper {
+    display:none;
+  }
+  .smith-dialog-wrapper {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.4);
+    flex-direction: column;
+  }
+  .smith-dialog-wrapper:not(.with-enrollment-request) button.request-enroll-button {
+    transform: scale(0);
+    opacity:0;
+  }
+  body.show-dialog .smith-dialog {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .smith-dialog {
+    max-width: 80vw;
+    min-width: 80vw;
+    max-height: 80vh;
+    margin: 10vh auto auto;
+    z-index: 99999999;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 2px 4px 0 rgba(0,0,0,.4);
+    transform: translateY(-100%);
+    transition: .4s ease-in-out;
+    opacity: 0;
+  }
+  .smith-dialog-header {
+    height: 48px;
+    display: flex;
+    padding: 0 16px;
+    background-color: rgb(222, 46, 7);
+    color: white;
+    font-size: 18px;
+  }
+  .smith-dialog-header > *:first-child {
+    margin-left: 0px;
+  }
+  .smith-dialog-header > * {
+    margin: auto 0 auto 8px;
+  }
+  .smith-dialog-body {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    max-height: calc(80vh - 120px);
+    overflow-y: auto;
+  }
+  .smith-dialog-body > *:last-child {
+    margin-bottom: 0;
+  }
+  .smith-dialog-body .notice {
+    font-style: italic;
+  }
+  .smith-dialog-body > * {
+    margin-bottom: 8px;
+  }
+  .smith-dialog-footer {
+    height: 72px;
+    display: flex;
+    padding: 0 16px;
+  }
+  .smith-dialog-footer button {
+    height: 36px;
+    padding: 0 16px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(0,0,0,0.4);
+    border-radius: 4px;
+  }
+  .smith-dialog-footer button:hover {
+    background-color: rgb(222, 46, 7);
+    color: rgba(255, 255, 255, 1);
+    border-color: rgba(222, 46, 7, 1);
+  }
+  .smith-dialog-footer > *:first-child {
+    margin-left: auto;
+  }
+  .smith-dialog-footer > * {
+    margin: auto 0 auto 8px;
+  }
