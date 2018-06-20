@@ -11,11 +11,12 @@
     /**
      * Checks if view is the user view.
      */
-  if(parent.document.body.querySelector('iframe.d2l-iframe.d2l-iframe-fit-user-content')
-      .parentElement.classList.contains('d2l-fileviewer-text')){
-
-
-  }
+    var d2lIframe = parent.document.body.querySelector('iframe.d2l-iframe.d2l-iframe-fit-user-content');
+    if(d2lIframe){
+        if(d2lIframe.parentElement.classList.contains('d2l-fileviewer-text')){
+            document.body.classList.add('viewing');
+        }
+    }
 
 })();
 
