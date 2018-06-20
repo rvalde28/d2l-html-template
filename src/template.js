@@ -17,7 +17,40 @@
           document.body.classList.add('viewing');
       }
     }
-
 })();
 
+var added = true;
 
+$('.grid-container').masonry({
+    itemSelector: '.cell-contents',
+    gutter: 4,
+    columnWidth: '.cell-contents',
+    horizontalOrder: true,
+    percentPosition: true,
+
+});
+
+$(window).resize(function(){
+
+  var windowWidth = $(this).width();
+
+  if(windowWidth >= 767) {
+      if(!added) {
+          added = true;
+          $('.grid-container').masonry({
+              itemSelector: '.cell-contents',
+              gutter: 4,
+              columnWidth: '.cell-contents',
+              horizontalOrder: true,
+              percentPosition: true,
+
+          });
+      }
+  }
+  else{
+    if(added) {
+        $('.grid-container').masonry('destroy');
+        added = false;
+    }
+  }
+});

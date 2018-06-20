@@ -13,15 +13,13 @@ ul {
 }
 
 .viewing .grid-container{
-    display:grid;
-    width: 100%;
-    grid-template-columns: auto auto auto;
     margin-bottom: 8px;
-    padding-right: 8px;
 }
 
 .viewing .grid-container > div{
-    width: calc(100% - 8px);
+    width: calc(33.33% - 13px);
+    margin-top: 8px;
+
 }
 
 body:not(.viewing) .grid-container{
@@ -30,9 +28,9 @@ body:not(.viewing) .grid-container{
 }
 
 .viewing .cell-contents{
-    margin: 8px 0 0 8px;
-    display:flex;
+    margin-left: 8px;
 
+    display:flex;
 }
 
 .viewing .cell-container{
@@ -161,6 +159,9 @@ body:not(.viewing) .cell-contents:last-child {
     .viewing .cell-contents {
         margin: 8px 8px 0px 8px;
     }
+    .viewing .grid-container > div{
+        width: calc(100% - 16px);
+    }
 }
 
 @media only screen and (max-width:767px) and (min-width: 481px)  {
@@ -186,6 +187,9 @@ body:not(.viewing) .cell-contents:last-child {
     }
     .viewing .cell-contents {
         margin: 8px 8px 0px 8px;
+    }
+    .viewing .grid-container > div{
+        width: calc(100% - 16px);
     }
 }
 @media only screen and (max-width:961px) and (min-width: 767px) {
