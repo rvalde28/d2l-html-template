@@ -51,7 +51,6 @@ body:not(.show-dialog) .smith-dialog-wrapper {
     font-size: 2.2em;
     font-weight: bold;
     font-family: 'Oswald', sans-serif;
-    margin-bottom: 2px;
   }
 
   .smith-dialog-header span{
@@ -79,7 +78,7 @@ body:not(.show-dialog) .smith-dialog-wrapper {
   .smith-dialog-body {
     display: flex;
     flex-direction: column;
-    max-height: calc(80vh - 120px);
+    max-height: calc(80vh - 144px);
     overflow-y: auto;
     padding: 16px;
   }
