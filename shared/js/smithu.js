@@ -96,6 +96,11 @@
 				link.setAttribute('rel', 'stylesheet');
 				link.setAttribute('href', '/shared/css/smithu.css');
 				window.top.document.head.appendChild(link);
+
+				let main = document.createElement('link');
+                main.setAttribute('rel', 'stylesheet');
+                main.setAttribute('href', 'css/main.css');
+                window.top.document.head.appendChild(main);
 			}
 		};
 		if (!window.top.SmithD2L.dialog) {

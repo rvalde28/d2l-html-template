@@ -68,7 +68,7 @@ $('.cell-container').click(function(){
 
     var popUpContents = $(this).parent().find('.pop-up-container')
         .find('.pop-up-contents').html();
-    
+
 
     var obj = {
         'title': popUpTitle,
