@@ -41,9 +41,7 @@ $(window).resize(function(){
               itemSelector: '.cell-contents',
               gutter: 4,
               columnWidth: '.cell-contents',
-              horizontalOrder: true,
               percentPosition: true,
-
           });
       }
   }

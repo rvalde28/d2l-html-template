@@ -8,8 +8,8 @@ ul {
     padding-left: 5%;
 }
 
-.viewing .page-header{
-
+.viewing #titleHeader{
+    margin-bottom: 8px;
 }
 
 .viewing .grid-container{
@@ -37,6 +37,7 @@ body:not(.viewing) .grid-container{
     background: linear-gradient(to left, white 50%, #DD3326 50%);
     background-size: 200% 100%;
     background-position: right bottom;
+    cursor: pointer;
 }
 
 .viewing .cell-container:hover{
@@ -104,6 +105,10 @@ body:not(.viewing) .pop-up-container{
     position:absolute;
     bottom: 0;
     right: 0;
+}
+
+body:not(.viewing) .click-to-learn{
+    display:none;
 }
 
 .viewing .cell-contents:hover .click-to-learn{
