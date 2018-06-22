@@ -107,6 +107,7 @@ body:not(.viewing) .pop-up-container{
     right: 0;
 }
 
+
 body:not(.viewing) .click-to-learn{
     display:none;
 }

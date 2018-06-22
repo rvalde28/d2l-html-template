@@ -1,7 +1,7 @@
 var children = $('.grid-container').children();
 var childrenCache = $('.grid-container').children();
-var called = false;
-var called2 = false;
+var isDesktop = false;
+var isMobile = false;
 
 /**
  * Function for swaping cells around
@@ -110,10 +110,10 @@ function swap() {
 
 if($(window).width() >= 767) {
     swap();
-    called = true;
+    isDesktop = true;
 }
 else{
-    called2 =true;
+    isMobile =true;
 }
 /**
  * Template script to add SmithD2L script if missing.
@@ -157,9 +157,9 @@ $(window).resize(function(){
 
     if(windowWidth >= 767) {
         $('.grid-container').masonry('destroy');
-        if(!called) {
+        if(!isDesktop) {
             swap();
-            called = true;
+            isDesktop = true;
         }
         $('.grid-container').masonry({
             itemSelector: '.cell-contents',
@@ -168,13 +168,13 @@ $(window).resize(function(){
             percentPosition: true,
 
         });
-        called2 = false;
+        isMobile = false;
     }
     else{
         $('.grid-container').masonry('destroy');
-        if(!called2) {
+        if(!isMobile) {
             swap();
-            called2 = true;
+            isMobile = true;
         }
         for(var i = 0; i < children.length; i++){
             children.remove();
@@ -192,6 +192,7 @@ $(window).resize(function(){
         });
 
         children = childrenCache;
-        called = false;
+        isDesktop = false;
     }
+
 });

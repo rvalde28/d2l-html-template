@@ -100,3 +100,6 @@ body:not(.show-dialog) .smith-dialog-wrapper {
   .smith-dialog-footer > * {
     margin: auto 0 auto 8px;
   }
+  video{
+    width: 100%;
+  }
