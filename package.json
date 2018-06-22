@@ -15,8 +15,6 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
-    "isotope-fit-columns": "^1.1.4",
-    "isotope-masonry-horizontal": "^2.0.1",
     "masonry-layout": "^4.2.1"
   }
 }
