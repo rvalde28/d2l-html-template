@@ -135,3 +135,42 @@ body:not(.show-dialog) .smith-dialog-wrapper {
     -webkit-margin-end: 0px;
     -webkit-padding-start: 40px;
   }
+  @media only screen and (max-width:481px)  {
+    /* smartphones, iPhone, portrait 480x320 phones */
+      video{
+          width: 100%;
+      }
+  }
+
+  @media only screen and (max-width:767px) and (min-width: 481px)  {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+      video{
+          width: 100%;
+      }
+  }
+  @media only screen and (max-width:961px) and (min-width: 767px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+      video{
+          width: 90%;
+      }
+  }
+  @media only screen and (max-width:1025px) and (min-width: 961px){
+      video{
+          width: 80%;
+      }
+  }
+
+  @media only screen and (max-width:1281px) and (min-width: 1025px){
+    /* big landscape tablets, laptops, and desktops */
+      video{
+          width: 70%;
+      }
+  }
+
+  @media only screen and (min-width:1281px){
+    /* hi-res laptops and desktops */
+
+      video{
+          width: 55%;
+      }
+  }
