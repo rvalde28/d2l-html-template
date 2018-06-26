@@ -73,6 +73,9 @@
             children[5] = children[2];
             children[2] = temp1;
 
+            for (let i = 0; i < children.length; i++) {
+                children[i].remove();
+            }
 
             for (let i = 0; i < children.length; i++) {
                 if(i % 3 === 0){
