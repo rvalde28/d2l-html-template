@@ -132,6 +132,10 @@ body:not(.viewing) .pop-up-container{
     width: 33.333%
 }
 
+.viewing div.content div#editGrid{
+    display:none;
+}
+
 body:not(.viewing) .cell-contents > div:first-child {
     margin-left: 0;
     width: calc(50% - 4px);
