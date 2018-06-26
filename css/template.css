@@ -106,6 +106,9 @@ body:not(.viewing) .pop-up-container{
     bottom: 0;
     right: 0;
 }
+video{
+    width: 100%;
+}
 
 body:not(.viewing) .click-to-learn{
     display:none;
@@ -167,6 +170,13 @@ body:not(.viewing) .cell-contents:last-child {
     .viewing .grid-container > div{
         width: calc(100% - 16px);
     }
+    body:not(.viewing) .cell-contents > div {
+        margin: 0;
+        width: 100%;
+    }
+    body:not(.viewing) .cell-contents > div:first-child {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width:767px) and (min-width: 481px)  {
@@ -195,6 +205,13 @@ body:not(.viewing) .cell-contents:last-child {
     }
     .viewing .grid-container > div{
         width: calc(100% - 16px);
+    }
+    body:not(.viewing) .cell-contents > div {
+        margin: 0;
+        width: 100%;
+    }
+    body:not(.viewing) .cell-contents > div:first-child {
+        width: 100%;
     }
 }
 @media only screen and (max-width:961px) and (min-width: 767px) {
