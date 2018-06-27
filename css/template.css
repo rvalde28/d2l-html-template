@@ -13,6 +13,9 @@ ul {
 }
 
 .viewing .grid-container{
+    display:flex;
+    width: 100%;
+    grid-template-columns: auto auto auto;
     margin-bottom: 8px;
 }
 
@@ -28,8 +31,7 @@ body:not(.viewing) .grid-container{
 }
 
 .viewing .cell-contents{
-    margin-left: 8px;
-
+    margin: 8px 0 0 8px;
     display:flex;
 }
 
@@ -97,6 +99,10 @@ body:not(.viewing) .pop-up-container{
     z-index: 1010;
     min-width: 320px;
 }
+
+.click-to-learn{
+    display:none;
+}
 .viewing .click-to-learn{
     display: none;
     color: white;
@@ -118,12 +124,24 @@ body:not(.viewing) .click-to-learn{
     display: block;
 }
 
-
-.viewing .cell-contents > div:first-child{
-    width: 100%;
-}
 .description{
     margin-right: 8px;
+}
+
+.viewing  #Column1{
+    width: 33.333%;
+}
+
+.viewing  #Column2{
+    width: 33.333%
+}
+
+.viewing  #Column3{
+    width: 33.333%
+}
+
+.viewing div.content div#editGrid{
+    display:none;
 }
 
 body:not(.viewing) .cell-contents > div:first-child {
@@ -167,6 +185,7 @@ body:not(.viewing) .cell-contents:last-child {
     .viewing .cell-contents {
         margin: 8px 8px 0px 8px;
     }
+
     .viewing .grid-container > div{
         width: calc(100% - 16px);
     }
@@ -176,6 +195,20 @@ body:not(.viewing) .cell-contents:last-child {
     }
     body:not(.viewing) .cell-contents > div:first-child {
         width: 100%;
+    }
+    .viewing .grid-container{
+        display:inline-block;
+    }
+    .viewing  #Column1{
+        width: 100%;
+    }
+
+    .viewing  #Column2{
+        width: 100%;
+    }
+
+    .viewing  #Column3{
+        width:  100%;
     }
 }
 
@@ -212,6 +245,20 @@ body:not(.viewing) .cell-contents:last-child {
     }
     body:not(.viewing) .cell-contents > div:first-child {
         width: 100%;
+    }
+    .viewing .grid-container{
+        display:inline-block;
+    }
+    .viewing  #Column1{
+        width: 100%;
+    }
+
+    .viewing  #Column2{
+        width: 100%;
+    }
+
+    .viewing  #Column3{
+        width:  100%;
     }
 }
 @media only screen and (max-width:961px) and (min-width: 767px) {
