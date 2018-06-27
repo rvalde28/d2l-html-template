@@ -17,7 +17,66 @@
           document.body.classList.add('viewing');
       }
     }
-
 })();
 
+/**
+ *  Masonry code for aligning containers in columns
+ */
+var added = true;
+
+$('.grid-container').masonry({
+    itemSelector: '.cell-contents',
+    gutter: 4,
+    columnWidth: '.cell-contents',
+    horizontalOrder: true,
+    percentPosition: true,
+
+});
+
+//depending onscreen size it changes the view from desktop to mobile view
+$(window).resize(function(){
+  var windowWidth = $(this).width();
+
+  //desktop view
+  if(windowWidth >= 767) {
+      if(!added) {
+          added = true;
+          $('.grid-container').masonry({
+              itemSelector: '.cell-contents',
+              gutter: 4,
+              columnWidth: '.cell-contents',
+              percentPosition: true,
+          });
+      }
+  }
+  //mobile view
+  else{
+    if(added) {
+        $('.grid-container').masonry('destroy');
+        added = false;
+    }
+  }
+});
+
+
+/**
+ * Click events for cells to trigger pop ups
+ */
+$('.cell-container').click(function(){
+    var popUpTitle = $(this).parent().find('.pop-up-container')
+        .find('.page-header').text();
+
+    var popUpContents = $(this).parent().find('.pop-up-container')
+        .find('.pop-up-contents').html();
+
+
+    var obj = {
+        'title': popUpTitle,
+        'body' : popUpContents,
+        'hideEnrollButton' : 'true'
+    };
+
+    window.top.SmithD2L.showDialog(obj);
+
+});
 

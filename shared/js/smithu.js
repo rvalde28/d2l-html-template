@@ -49,8 +49,8 @@
 				this.dialog.querySelector('.smith-dialog-body p').innerHTML = body;
 			},
 			showDialog(obj) {
-        this.dialogContentObj = obj;
-        this.setDialogHeader(obj.title);
+			this.dialogContentObj = obj;
+			this.setDialogHeader(obj.title);
 				this.setDialogBody(obj.body);
 				if (!obj.hideEnrollButton) {
 					this.dialog.classList.add('with-enrollment-request');
@@ -58,6 +58,7 @@
 				if (obj.requestStatus) {
 					this.setDialogNotice(`Enrollment Request Status: ${obj.requestStatus}`);
 				}
+
 				window.top.document.body.classList.add(this.bodyDialogToggleClass);
 			},
 			requestEnrollment(e) {
@@ -95,6 +96,11 @@
 				link.setAttribute('rel', 'stylesheet');
 				link.setAttribute('href', '/shared/css/smithu.css');
 				window.top.document.head.appendChild(link);
+
+				let main = document.createElement('link');
+                main.setAttribute('rel', 'stylesheet');
+                main.setAttribute('href', 'css/main.css');
+                window.top.document.head.appendChild(main);
 			}
 		};
 		if (!window.top.SmithD2L.dialog) {

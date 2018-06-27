@@ -5,8 +5,6 @@ body.show-dialog {
   overflow: hidden;
 }
 .smith-dialog  * {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
     transition: transform .4s ease-in-out;
 }
@@ -46,14 +44,32 @@ body:not(.show-dialog) .smith-dialog-wrapper {
     opacity: 0;
   }
   .smith-dialog-header {
-    height: 48px;
     display: flex;
-    padding: 0 16px;
     background-color: rgb(222, 46, 7);
     color: white;
-    font-size: 18px;
+    text-indent: 4.5pt;
+    font-size: 2.2em;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
   }
-  .smith-dialog-header > *:first-child {
+
+  .smith-dialog-header span{
+    width: 100%;
+    background-color:#DD3326;
+    color:#FFF;
+    padding:15px;
+    margin-bottom: 0;
+  }
+.smith-dialog-header span:after{
+    background:#FFF;
+    content:"";
+    display:block;
+    height:5px;
+    margin:20px -15px -5px -15px;
+  }
+
+
+.smith-dialog-header > *:first-child {
     margin-left: 0px;
   }
   .smith-dialog-header > * {
@@ -62,9 +78,9 @@ body:not(.show-dialog) .smith-dialog-wrapper {
   .smith-dialog-body {
     display: flex;
     flex-direction: column;
-    padding: 16px;
-    max-height: calc(80vh - 120px);
+    max-height: calc(80vh - 144px);
     overflow-y: auto;
+    padding: 16px;
   }
   .smith-dialog-body > *:last-child {
     margin-bottom: 0;
@@ -73,7 +89,7 @@ body:not(.show-dialog) .smith-dialog-wrapper {
     font-style: italic;
   }
   .smith-dialog-body > * {
-    margin-bottom: 8px;
+    margin-bottom: 0px;
   }
   .smith-dialog-footer {
     height: 72px;
@@ -99,4 +115,62 @@ body:not(.show-dialog) .smith-dialog-wrapper {
   }
   .smith-dialog-footer > * {
     margin: auto 0 auto 8px;
+  }
+  p{
+    margin: 0;
+    padding: 0;
+  }
+
+  p > *:first-child{
+    margin-top: 0;
+  }
+
+  ul{
+    margin-top:0;
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+  }
+  @media only screen and (max-width:481px)  {
+    /* smartphones, iPhone, portrait 480x320 phones */
+      video{
+          width: 100%;
+      }
+  }
+
+  @media only screen and (max-width:767px) and (min-width: 481px)  {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+      video{
+          width: 100%;
+      }
+  }
+  @media only screen and (max-width:961px) and (min-width: 767px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+      video{
+          width: 90%;
+      }
+  }
+  @media only screen and (max-width:1025px) and (min-width: 961px){
+      video{
+          width: 80%;
+      }
+  }
+
+  @media only screen and (max-width:1281px) and (min-width: 1025px){
+    /* big landscape tablets, laptops, and desktops */
+      video{
+          width: 70%;
+      }
+  }
+
+  @media only screen and (min-width:1281px){
+    /* hi-res laptops and desktops */
+
+      video{
+          width: 55%;
+      }
   }
