@@ -20,64 +20,58 @@
         return Math.ceil(obj.length/3);
     }
 
+    function oneCondition(array, maxRows){
+      let columnArray = [[],[],[]];
+      let index = 0;
+
+      for (let i = 0; i < array.length; i++) {
+        columnArray[index].push(array[i]);
+        if (i % maxRows === maxRows-1) {
+          index++;
+        }
+      }
+      return columnArray;
+    }
+
+    function twoCondition(array,maxRows){
+      let columnArray = [[],[],[]];
+      let index = 0;
+
+      for (let i = 0; i < array.length; i++) {
+        columnArray[index].push(array[i]);
+        if(index === 0){
+          if (i % maxRows === maxRows-1) {
+            index++;
+          }
+        }
+        else{
+          if (i % maxRows === maxRows-2) {
+            index++;
+          }
+        }
+      }
+
+      return columnArray;
+    }
+
     function splitRows(array, maxRows){
       let columnArray = [[],[],[]];
       let index = 0;
 
       if(maxRows === 3){
         if(array.length === 7){
-          console.log(array.length);
-          for (let i = 0; i < array.length; i++) {
-            console.log(index);
-
-            columnArray[index].push(array[i]);
-
-            if(index === 0){
-              if (i % 3 === 2) {
-                index++;
-              }
-            }
-            else{
-              if (i % 3 === 1) {
-                index++;
-              }
-            }
-          }
+          columnArray = twoCondition(array, maxRows);
         }
         else {
-          for (let i = 0; i < array.length; i++) {
-            columnArray[index].push(array[i]);
-            if (i % 3 === 2) {
-              index++;
-            }
-          }
+          columnArray = oneCondition(array, maxRows);
         }
       }
       else if(maxRows === 2){
         if(array.length === 4){
-          for (let i = 0; i < array.length; i++) {
-            columnArray[index].push(array[i]);
-            if(index === 0){
-              if (i % 2 === 1) {
-                index++;
-              }
-            }
-            else{
-
-
-              if (i % 2 === 0) {
-                index++;
-              }
-            }
-          }
+          columnArray = twoCondition(array, maxRows);
         }
         else {
-          for (let i = 0; i < array.length; i++) {
-            columnArray[index].push(array[i]);
-            if (i % 2 === 1) {
-              index++;
-            }
-          }
+          columnArray = oneCondition(array, maxRows);
         }
       }
       else{
@@ -100,7 +94,7 @@
       let columnArray = splitRows(children,maxRows);
 
       for(let i = 0; i < columns.length; i++){
-        console.log(columns[i]);
+
         addToColumns(columns[i], columnArray[i]);
       }
     }
@@ -115,51 +109,16 @@
         realign()
       }
     }
+
+
 })();
 
-/**
- *  Masonry code for aligning containers in columns
- */
-var added = true;
 
-$('.grid-container').masonry({
-    itemSelector: '.cell-contents',
-    gutter: 4,
-    columnWidth: '.cell-contents',
-    horizontalOrder: true,
-    percentPosition: true,
+window.centerVideos = function () {
 
-});
-
-//depending onscreen size it changes the view from desktop to mobile view
-$(window).resize(function(){
-  var windowWidth = $(this).width();
-
-  //desktop view
-  if(windowWidth >= 767) {
-      if(!added) {
-          added = true;
-          $('.grid-container').masonry({
-              itemSelector: '.cell-contents',
-              gutter: 4,
-              columnWidth: '.cell-contents',
-              percentPosition: true,
-          });
-      }
-  }
-  //mobile view
-  else{
-    if(added) {
-        $('.grid-container').masonry('destroy');
-        added = false;
-    }
-  }
-});
+};
 
 
-/**
- * Click events for cells to trigger pop ups
- */
 $('.cell-container').click(function(){
     var popUpTitle = $(this).parent().find('.pop-up-container')
         .find('.page-header').text();
@@ -176,5 +135,15 @@ $('.cell-container').click(function(){
 
     window.top.SmithD2L.showDialog(obj);
 
+  /**
+   * centers videos
+   */
+  let videoContainers = parent.document.getElementsByTagName("video");
+
+  for(let i = 0; i < videoContainers.length; i++){
+    console.log(videoContainers[0].parentElement);
+
+    videoContainers[i].parentElement.style.textAlign = "center"
+  }
 });
 

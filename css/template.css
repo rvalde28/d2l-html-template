@@ -17,6 +17,7 @@ ul {
     width: 100%;
     grid-template-columns: auto auto auto;
     margin-bottom: 8px;
+    padding-right: 8px;
 }
 
 .viewing .grid-container > div{
@@ -33,6 +34,7 @@ body:not(.viewing) .grid-container{
 .viewing .cell-contents{
     margin: 8px 0 0 8px;
     display:flex;
+
 }
 
 .viewing .cell-container{
@@ -40,6 +42,7 @@ body:not(.viewing) .grid-container{
     background-size: 200% 100%;
     background-position: right bottom;
     cursor: pointer;
+    width:100%;
 }
 
 .viewing .cell-container:hover{
@@ -181,6 +184,8 @@ body:not(.viewing) .cell-contents:last-child {
     }
     .viewing .grid-container{
         grid-template-columns: auto;
+        padding-right: 0;
+        display:inline-block;
     }
     .viewing .cell-contents {
         margin: 8px 8px 0px 8px;
@@ -196,9 +201,7 @@ body:not(.viewing) .cell-contents:last-child {
     body:not(.viewing) .cell-contents > div:first-child {
         width: 100%;
     }
-    .viewing .grid-container{
-        display:inline-block;
-    }
+
     .viewing  #Column1{
         width: 100%;
     }
@@ -229,16 +232,17 @@ body:not(.viewing) .cell-contents:last-child {
     }
     .cell-contents > div:last-child {
         margin: 0;
-     }
+    }
     .viewing .grid-container{
         grid-template-columns: auto;
+        padding-right: 0;
+        display:inline-block;
+
     }
     .viewing .cell-contents {
         margin: 8px 8px 0px 8px;
     }
-    .viewing .grid-container > div{
-        width: calc(100% - 16px);
-    }
+
     body:not(.viewing) .cell-contents > div {
         margin: 0;
         width: 100%;
@@ -246,9 +250,7 @@ body:not(.viewing) .cell-contents:last-child {
     body:not(.viewing) .cell-contents > div:first-child {
         width: 100%;
     }
-    .viewing .grid-container{
-        display:inline-block;
-    }
+
     .viewing  #Column1{
         width: 100%;
     }
