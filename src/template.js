@@ -8,18 +8,23 @@
     window.top.document.body.appendChild(script);
   }
 
-    /**
-     * Function for swaping cells around
-     */
 
-    let columns = $($('.grid-container')[0]).children();
-    let gridContiainer = $($('.grid-container')[1]);
+
+    let grid = $('.grid-container');
+    let columns = $(grid[0]).children();
+    let gridContiainer = $(grid[1]);
     let children = gridContiainer.children();
 
+   /**
+   * return max rows
+   */
     function getMaxRows(obj){
         return Math.ceil(obj.length/3);
     }
 
+    /**
+    * Regular condition for swapping cells. Deals with all cell except 7 and 4
+    */
     function oneCondition(array, maxRows){
       let columnArray = [[],[],[]];
       let index = 0;
@@ -32,6 +37,10 @@
       }
       return columnArray;
     }
+
+  /**
+   *  special condition for cell swapping. Deals with 7 and 4 cells
+   */
 
     function twoCondition(array,maxRows){
       let columnArray = [[],[],[]];
@@ -54,9 +63,12 @@
       return columnArray;
     }
 
+  /**
+   *  Gets the values of the columns for the grid
+   *
+   */
     function splitRows(array, maxRows){
       let columnArray = [[],[],[]];
-      let index = 0;
 
       if(maxRows === 3){
         if(array.length === 7){
@@ -79,22 +91,27 @@
           columnArray[i].push(array[i]);
         }
       }
-
       return columnArray;
     }
 
+  /**
+   *  Appends the columns from to the corresponding columns in the html doc
+   */
     function addToColumns(column, rowValues){
       for(let i = 0; i < rowValues.length; i++){
         $(column).append($(rowValues[i]))
       }
     }
 
-    function realign(){
+
+  /**
+   * Super method for moving the cells from edit mode to column containers in usre mode
+   */
+  function realign(){
       let maxRows = getMaxRows(children);
       let columnArray = splitRows(children,maxRows);
 
       for(let i = 0; i < columns.length; i++){
-
         addToColumns(columns[i], columnArray[i]);
       }
     }
@@ -111,39 +128,36 @@
     }
 
 
-})();
-
-
-window.centerVideos = function () {
-
-};
-
-
-$('.cell-container').click(function(){
-    var popUpTitle = $(this).parent().find('.pop-up-container')
+  /**
+   * Triggers the pop up
+   */
+  $('.cell-container').click(function(){
+      let popUpTitle = $(this).parent().find('.pop-up-container')
         .find('.page-header').text();
-
-    var popUpContents = $(this).parent().find('.pop-up-container')
+  
+      let popUpContents = $(this).parent().find('.pop-up-container')
         .find('.pop-up-contents').html();
-
-
-    var obj = {
+  
+  
+      let obj = {
         'title': popUpTitle,
         'body' : popUpContents,
         'hideEnrollButton' : 'true'
-    };
+      };
+  
+      window.top.SmithD2L.showDialog(obj);
+  
+      /**
+       * centers videos
+       */
+      let videoContainers = parent.document.getElementsByTagName("video");
+  
+      for(let i = 0; i < videoContainers.length; i++){
+        console.log(videoContainers[0].parentElement);
+  
+        videoContainers[i].parentElement.style.textAlign = "center"
+      }
+    });
+})();
 
-    window.top.SmithD2L.showDialog(obj);
-
-  /**
-   * centers videos
-   */
-  let videoContainers = parent.document.getElementsByTagName("video");
-
-  for(let i = 0; i < videoContainers.length; i++){
-    console.log(videoContainers[0].parentElement);
-
-    videoContainers[i].parentElement.style.textAlign = "center"
-  }
-});
 

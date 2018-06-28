@@ -35,7 +35,7 @@ a{color:#006fbf;}
 a:hover{color:#808281;}
 blockquote{padding:5px;font-size:1em;border-left:0;border-top:5px solid #808281;border-bottom:5px solid #808281;}
 blockquote.pull-right{padding-right:15px;padding-left:0;border-right:0;border-left:0;text-align:right;}
-.panel:hover{box-shadow:0px 16px 30px -18px rgba(130,130,130,0.8);}
+.panel:hover{box-shadow:0 16px 30px -18px rgba(130,130,130,0.8);}
 .panel{border-radius:0;}
 .panel-main{border-color:#DD3326;}
 .panel-main .panel-heading{border-color:#DD3326;color:#fff;background-color:#DD3326;}
