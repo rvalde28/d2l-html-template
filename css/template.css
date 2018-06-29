@@ -12,6 +12,10 @@ ul {
     margin-bottom: 8px;
 }
 
+.page-header {
+    margin-top: 0;
+}
+
 .viewing .grid-container{
     display:flex;
     width: 100%;
@@ -23,7 +27,6 @@ ul {
 .viewing .grid-container > div{
     width: calc(33.33% - 13px);
     margin-top: 8px;
-
 }
 
 body:not(.viewing) .grid-container{
@@ -130,16 +133,11 @@ body:not(.viewing) .click-to-learn{
     margin-right: 8px;
 }
 
-.viewing  #Column1{
-    width: 33.333%;
-}
-
-.viewing  #Column2{
-    width: 33.333%
-}
-
-.viewing  #Column3{
-    width: 33.333%
+#Column1,
+#Column2,
+#Column3 {
+    width: calc(100% / 3);
+    margin-top: 0;
 }
 
 .viewing div.content div#editGrid{
