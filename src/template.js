@@ -1,7 +1,8 @@
 /**
  * Template script to add SmithD2L script if missing.
  */
-(function () {
+/* global jQuery */
+(function ($) {
   if (!window.top.SmithD2L) {
     let script = document.createElement('script');
     script.setAttribute('src', '/shared/js/smithu.js');
@@ -12,8 +13,8 @@
 
     let grid = $('.grid-container');
     let columns = $(grid[0]).children();
-    let gridContiainer = $(grid[1]);
-    let children = gridContiainer.children();
+    let gridContainer = $(grid[1]);
+    let children = gridContainer.children();
 
    /**
    * return max rows
@@ -146,18 +147,7 @@
       };
   
       window.top.SmithD2L.showDialog(obj);
-  
-      /**
-       * centers videos
-       */
-      let videoContainers = parent.document.getElementsByTagName("video");
-  
-      for(let i = 0; i < videoContainers.length; i++){
-        console.log(videoContainers[0].parentElement);
-  
-        videoContainers[i].parentElement.style.textAlign = "center"
-      }
     });
-})();
+})(jQuery);
 
 
