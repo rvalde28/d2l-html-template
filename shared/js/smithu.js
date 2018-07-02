@@ -60,6 +60,7 @@
 				}
 
 				window.top.document.body.classList.add(this.bodyDialogToggleClass);
+
 			},
 			requestEnrollment(e) {
 				if (e.currentTarget.classList.contains('request-enroll-button')) {
@@ -112,5 +113,6 @@
 				window.top.document.body.appendChild(script);
 			}
 		}
+
 	}
 })();

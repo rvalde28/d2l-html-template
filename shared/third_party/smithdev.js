@@ -170,8 +170,9 @@ JS File that provides utilities for Smith University
     $(window).ready(function () {
         Smith.init();
         if (!window.top.Smith) {
-            window.top.Smith = Smith;
+          window.top.Smith = Smith;
         }
+
     });
 
 }(jQuery));

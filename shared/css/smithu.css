@@ -70,7 +70,7 @@ body:not(.show-dialog) .smith-dialog-wrapper {
 
 
 .smith-dialog-header > *:first-child {
-    margin-left: 0px;
+    margin-left: 0;
   }
   .smith-dialog-header > * {
     margin: auto 0 auto 8px;
@@ -89,7 +89,7 @@ body:not(.show-dialog) .smith-dialog-wrapper {
     font-style: italic;
   }
   .smith-dialog-body > * {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
   .smith-dialog-footer {
     height: 72px;
@@ -131,8 +131,8 @@ body:not(.show-dialog) .smith-dialog-wrapper {
     list-style-type: disc;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
     -webkit-padding-start: 40px;
   }
   @media only screen and (max-width:481px)  {

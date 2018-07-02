@@ -12,17 +12,21 @@ ul {
     margin-bottom: 8px;
 }
 
+.page-header {
+    margin-top: 0;
+}
+
 .viewing .grid-container{
     display:flex;
     width: 100%;
     grid-template-columns: auto auto auto;
     margin-bottom: 8px;
+    padding-right: 8px;
 }
 
 .viewing .grid-container > div{
     width: calc(33.33% - 13px);
     margin-top: 8px;
-
 }
 
 body:not(.viewing) .grid-container{
@@ -40,6 +44,7 @@ body:not(.viewing) .grid-container{
     background-size: 200% 100%;
     background-position: right bottom;
     cursor: pointer;
+    width:100%;
 }
 
 .viewing .cell-container:hover{
@@ -82,7 +87,7 @@ body:not(.viewing) .pop-up-container{
 }
 
 .cell-container > *{
-    padding: 0px 20px 0px 20px;
+    padding: 0 20px 0 20px;
 }
 
 .pop-up-container > div{
@@ -106,7 +111,7 @@ body:not(.viewing) .pop-up-container{
 .viewing .click-to-learn{
     display: none;
     color: white;
-    margin: 0px 20px 0px 0px;
+    margin: 0 20px 0 0;
     padding: 0;
     position:absolute;
     bottom: 0;
@@ -128,16 +133,11 @@ body:not(.viewing) .click-to-learn{
     margin-right: 8px;
 }
 
-.viewing  #Column1{
-    width: 33.333%;
-}
-
-.viewing  #Column2{
-    width: 33.333%
-}
-
-.viewing  #Column3{
-    width: 33.333%
+#Column1,
+#Column2,
+#Column3 {
+    width: calc(100% / 3);
+    margin-top: 0;
 }
 
 .viewing div.content div#editGrid{
@@ -181,9 +181,11 @@ body:not(.viewing) .cell-contents:last-child {
     }
     .viewing .grid-container{
         grid-template-columns: auto;
+        padding-right: 0;
+        display:inline-block;
     }
     .viewing .cell-contents {
-        margin: 8px 8px 0px 8px;
+        margin: 8px 8px 0 8px;
     }
 
     .viewing .grid-container > div{
@@ -196,9 +198,7 @@ body:not(.viewing) .cell-contents:last-child {
     body:not(.viewing) .cell-contents > div:first-child {
         width: 100%;
     }
-    .viewing .grid-container{
-        display:inline-block;
-    }
+
     .viewing  #Column1{
         width: 100%;
     }
@@ -229,16 +229,17 @@ body:not(.viewing) .cell-contents:last-child {
     }
     .cell-contents > div:last-child {
         margin: 0;
-     }
+    }
     .viewing .grid-container{
         grid-template-columns: auto;
+        padding-right: 0;
+        display:inline-block;
+
     }
     .viewing .cell-contents {
-        margin: 8px 8px 0px 8px;
+        margin: 8px 8px 0 8px;
     }
-    .viewing .grid-container > div{
-        width: calc(100% - 16px);
-    }
+
     body:not(.viewing) .cell-contents > div {
         margin: 0;
         width: 100%;
@@ -246,9 +247,7 @@ body:not(.viewing) .cell-contents:last-child {
     body:not(.viewing) .cell-contents > div:first-child {
         width: 100%;
     }
-    .viewing .grid-container{
-        display:inline-block;
-    }
+
     .viewing  #Column1{
         width: 100%;
     }
