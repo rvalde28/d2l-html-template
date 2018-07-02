@@ -133,12 +133,12 @@
    * Triggers the pop up
    */
   $('.cell-container').click(function(){
+    console.log('pop called');
       let popUpTitle = $(this).parent().find('.pop-up-container')
         .find('.page-header').text();
   
       let popUpContents = $(this).parent().find('.pop-up-container')
         .find('.pop-up-contents').html();
-  
   
       let obj = {
         'title': popUpTitle,
@@ -147,7 +147,21 @@
       };
   
       window.top.SmithD2L.showDialog(obj);
+
+      parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = 'none';
+      parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = 'none';
+
     });
+
+    let parentDoc = parent.document.querySelector('.smith-dialog-wrapper');
+    console.log(parentDoc);
+
+    $(parent.document.querySelector('.smith-dialog-wrapper')).click(function(){
+
+      parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = '';
+      parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = '';
+
+    })
 })(jQuery);
 
 
