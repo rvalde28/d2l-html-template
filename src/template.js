@@ -106,7 +106,7 @@
 
 
   /**
-   * Super method for moving the cells from edit mode to column containers in usre mode
+   * Super method for moving the cells from edit mode to column containers in user mode
    */
   function realign(){
       let maxRows = getMaxRows(children);
@@ -133,7 +133,6 @@
    * Triggers the pop up
    */
   $('.cell-container').click(function(){
-    console.log('pop called');
       let popUpTitle = $(this).parent().find('.pop-up-container')
         .find('.page-header').text();
   
@@ -153,8 +152,6 @@
 
     });
 
-    let parentDoc = parent.document.querySelector('.smith-dialog-wrapper');
-    console.log(parentDoc);
 
     $(parent.document.querySelector('.smith-dialog-wrapper')).click(function(){
 

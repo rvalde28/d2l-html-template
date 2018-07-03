@@ -133,25 +133,17 @@ body:not(.viewing) .click-to-learn{
     margin-right: 8px;
 }
 
-.viewing #Column1{
-    width: calc(100% / 3);
-    margin-top: 0;
-}
-
-.viewing #Column2{
-    width: calc(100% / 3);
-    margin-top: 0;
-}
-
+.viewing #Column1,
+.viewing #Column2,
 .viewing #Column3{
     width: calc(100% / 3);
     margin-top: 0;
 }
 
 
-#Column1,
-#Column2,
-#Column3 {
+body:not(.viewing) #Column1,
+body:not(.viewing) #Column2,
+body:not(.viewing) #Column3 {
     display: none;
 }
 
