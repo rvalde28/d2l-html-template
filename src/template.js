@@ -147,6 +147,18 @@
   
       window.top.SmithD2L.showDialog(obj);
 
+     /**
+     * centers videos
+     */
+      let videoContainers = window.top.document.getElementsByTagName("video");
+
+      for(let i = 0; i < videoContainers.length; i++){
+        console.log(videoContainers[0].parentElement);
+
+        videoContainers[i].parentElement.style.textAlign = "center"
+      }
+
+
       if(parent.document.body.querySelector('.d2l-page-collapsepane-container')){
         parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = 'none';
         parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = 'none';
