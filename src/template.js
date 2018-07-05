@@ -147,17 +147,18 @@
   
       window.top.SmithD2L.showDialog(obj);
 
-      parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = 'none';
-      parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = 'none';
-
+      if(parent.document.body.querySelector('.d2l-page-collapsepane-container')){
+        parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = 'none';
+        parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = 'none';
+      }
     });
 
 
-    $(parent.document.querySelector('.smith-dialog-wrapper')).click(function(){
-
-      parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = '';
-      parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = '';
-
+    $(parent.document.querySelector('.smith-dialog-wrapper')).click(function() {
+      if (parent.document.body.querySelector('.d2l-page-collapsepane-container')) {
+        parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = '';
+        parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = '';
+      }
     })
 })(jQuery);
 
