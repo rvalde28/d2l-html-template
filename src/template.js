@@ -106,7 +106,7 @@
 
 
   /**
-   * Super method for moving the cells from edit mode to column containers in usre mode
+   * Super method for moving the cells from edit mode to column containers in user mode
    */
   function realign(){
       let maxRows = getMaxRows(children);
@@ -139,7 +139,6 @@
       let popUpContents = $(this).parent().find('.pop-up-container')
         .find('.pop-up-contents').html();
   
-  
       let obj = {
         'title': popUpTitle,
         'body' : popUpContents,
@@ -147,7 +146,20 @@
       };
   
       window.top.SmithD2L.showDialog(obj);
+
+      if(parent.document.body.querySelector('.d2l-page-collapsepane-container')){
+        parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = 'none';
+        parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = 'none';
+      }
     });
+
+
+    $(parent.document.querySelector('.smith-dialog-wrapper')).click(function() {
+      if (parent.document.body.querySelector('.d2l-page-collapsepane-container')) {
+        parent.document.body.querySelector('.d2l-page-collapsepane-container').style.display = '';
+        parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.display = '';
+      }
+    })
 })(jQuery);
 
 
