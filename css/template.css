@@ -177,8 +177,8 @@ body:not(.viewing) h3{
 }
 
 .viewing h3{
-    text-indent: -20px;
-    padding-left: 40px;
+    text-indent: -28px;
+    padding-left: 48px;
 }
 
 @media only screen and (max-width:481px)  {
@@ -230,6 +230,10 @@ body:not(.viewing) h3{
     .viewing  #Column3{
         width:  100%;
     }
+    .viewing h3{
+        text-indent: -24px;
+        padding-left: 44px;
+    }
 }
 
 @media only screen and (max-width:767px) and (min-width: 481px)  {
@@ -278,6 +282,10 @@ body:not(.viewing) h3{
 
     .viewing  #Column3{
         width:  100%;
+    }
+    .viewing h3{
+        text-indent: -25px;
+        padding-left: 45px;
     }
 }
 @media only screen and (max-width:961px) and (min-width: 767px) {
