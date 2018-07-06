@@ -4,10 +4,17 @@ body {
     box-sizing: border-box;
 }
 
-ul {
-    padding-left: 5%;
+body:not(.viewing) ul {
+    padding-left: 2.5rem
 }
 
+.viewing ul{
+    padding-left: 2.8rem;
+}
+
+.cell-container.description div ul{
+    padding-left: 7rem;
+}
 .viewing #titleHeader{
     margin-bottom: 8px;
 }
@@ -45,6 +52,10 @@ body:not(.viewing) .grid-container{
     background-position: right bottom;
     cursor: pointer;
     width:100%;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid rgb(206, 206, 206);
+    padding-bottom: 15px;
+    position: relative;
 }
 
 .viewing .cell-container:hover{
@@ -64,13 +75,6 @@ body:not(.viewing) .cell-contents{
     padding: 8px 8px 0 8px;
 }
 
-.viewing .cell-container{
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border: 1px solid rgb(206, 206, 206);
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: relative;
-}
 
 body:not(.viewing) .cell-container{
     border: 1px solid rgb(206, 206, 206);
@@ -166,6 +170,15 @@ body:not(.viewing) .cell-contents:last-child {
 }
 .cell-contents > div:last-child {
     margin-right: 0;
+}
+
+body:not(.viewing) h3{
+    text-indent: 0;
+}
+
+.viewing h3{
+    text-indent: -20px;
+    padding-left: 40px;
 }
 
 @media only screen and (max-width:481px)  {
