@@ -177,8 +177,8 @@ body:not(.viewing) h3{
 }
 
 .viewing h3{
-    text-indent: -28px;
-    padding-left: 48px;
+    text-indent: -32px;
+    padding-left: 52px;
 }
 
 @media only screen and (max-width:481px)  {
@@ -293,7 +293,10 @@ body:not(.viewing) h3{
     body{
         font-size: 14px;
     }
-
+    .viewing h3{
+        text-indent: -25px;
+        padding-left: 45px;
+    }
 
 }
 @media only screen and (max-width:1025px) and (min-width: 961px){
