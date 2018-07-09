@@ -92,6 +92,7 @@
 			setDialog() {
 				this.dialog = window.top.document.body.querySelector(`.${this.dialogWrapperClass}`);
 			},
+
 			AddSmithUCss() {
 				let link = document.createElement('link');
 				link.setAttribute('rel', 'stylesheet');
@@ -100,7 +101,7 @@
 
 				let main = document.createElement('link');
                 main.setAttribute('rel', 'stylesheet');
-                main.setAttribute('href', 'css/main.css');
+                main.setAttribute('href', '/shared/css/main.css');
                 window.top.document.head.appendChild(main);
 			}
 		};
