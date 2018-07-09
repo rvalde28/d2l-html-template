@@ -129,12 +129,15 @@ body:not(.show-dialog) .smith-dialog-wrapper {
     margin-top:0;
     display: block;
     list-style-type: disc;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     -webkit-padding-start: 40px;
   }
+ul ul {list-style:none;}
+ul ul li::before{content:"\2013";margin-left:-20px;margin-right:15px;}
+ul ul ul {list-style:circle;}
+ul ul ul li::before{content:"";margin:auto;}
+
   @media only screen and (max-width:481px)  {
     /* smartphones, iPhone, portrait 480x320 phones */
       video{

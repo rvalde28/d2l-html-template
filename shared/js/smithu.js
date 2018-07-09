@@ -92,6 +92,7 @@
 			setDialog() {
 				this.dialog = window.top.document.body.querySelector(`.${this.dialogWrapperClass}`);
 			},
+
 			AddSmithUCss() {
 				let link = document.createElement('link');
 				link.setAttribute('rel', 'stylesheet');
