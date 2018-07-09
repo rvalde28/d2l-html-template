@@ -68,7 +68,6 @@ body:not(.viewing) .grid-container{
     color:white;
 }
 
-
 body:not(.viewing) .cell-contents{
     display:flex;
     width: 100%;
