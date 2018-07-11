@@ -117,6 +117,13 @@
       }
     }
 
+    function rewriteImageSrc() {
+      document.querySelectorAll('img').forEach(img => {
+        let imgSrc = img.src;
+        img.src = imgSrc.trim();
+      });
+    }
+
     /**
      * Checks if view is the user view, and swaps containers
      */
@@ -124,7 +131,8 @@
     if(d2lIframe){
       if(d2lIframe.parentElement.classList.contains('d2l-fileviewer-text')){
         document.body.classList.add('viewing');
-        realign()
+        realign();
+        rewriteImageSrc();
       }
     }
 
