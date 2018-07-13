@@ -124,6 +124,13 @@
       });
     }
 
+    function rewriteAHref() {
+      document.querySelectorAll('.pop-up-container a').forEach(a => {
+        let aHref = a.href;
+        a.href = aHref.trim();
+      });
+    }
+
     /**
      * Checks if view is the user view, and swaps containers
      */
@@ -133,6 +140,7 @@
         document.body.classList.add('viewing');
         realign();
         rewriteImageSrc();
+        rewriteAHref();
       }
     }
 
