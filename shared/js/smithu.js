@@ -88,6 +88,7 @@
 				window.top.SmithD2L.dialog.classList.remove('with-enrollment-request');
 				window.top.SmithD2L.setDialogNotice('');
 				window.top.document.body.classList.remove('show-dialog');
+				window.top.SmithD2L.setDialogBody('<p></p>');
 			},
 			setDialog() {
 				this.dialog = window.top.document.body.querySelector(`.${this.dialogWrapperClass}`);
@@ -105,6 +106,7 @@
          //        window.top.document.head.appendChild(main);
 			}
 		};
+
 		if (!window.top.SmithD2L.dialog) {
 			window.top.SmithD2L.init();
 			if (!window.top.Smith) {
@@ -114,6 +116,5 @@
 				window.top.document.body.appendChild(script);
 			}
 		}
-
 	}
 })();
