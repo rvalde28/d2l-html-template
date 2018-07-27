@@ -3,6 +3,8 @@
  */
 /* global jQuery */
 (function ($) {
+
+  //instatiates dialog code in html document
   if (!window.top.SmithD2L) {
     let script = document.createElement('script');
     script.setAttribute('src', '/shared/js/smithu.js');
@@ -10,7 +12,12 @@
   }
 
 
-
+    /**@var grid = grid container containing all of the cells
+    **@var columns = gets all columns from the grid which will be used to move the cells
+    **@var gridContainer =gridcontainer grid where the current cells are in edit mode, which will
+    ** eventually be moved to the column videoContainers
+    **@var children = cells that are in the edit mode to be moved to columns
+    **/
     let grid = $('.grid-container');
     let columns = $(grid[0]).children();
     let gridContainer = $(grid[1]);
@@ -96,7 +103,8 @@
     }
 
   /**
-   *  Appends the columns from to the corresponding columns in the html doc
+   *  Appends the columns from the grid container in edit mode
+   *  to the corresponding column containers in the html doc
    */
     function addToColumns(column, rowValues){
       for(let i = 0; i < rowValues.length; i++){
@@ -151,16 +159,16 @@
   $('.cell-container').click(function(){
       let popUpTitle = $(this).parent().find('.pop-up-container')
         .find('.page-header').text();
-  
+
       let popUpContents = $(this).parent().find('.pop-up-container')
         .find('.pop-up-contents').html();
-  
+
       let obj = {
         'title': popUpTitle,
         'body' : popUpContents,
         'hideEnrollButton' : 'true'
       };
-  
+
       window.top.SmithD2L.showDialog(obj);
 
      /**
@@ -172,14 +180,17 @@
         videoContainers[i].parentElement.style.textAlign = "center"
       }
 
-
+      /*
+      * pushes back the table of contents arrow tool to hide it in D2L when the dialog pop up is activated
+      * This is because the z index for tha tool is greater than the dialog so it shows up
+      */
       if(parent.document.body.querySelector('.d2l-page-collapsepane-container')){
         parent.document.body.querySelector('.d2l-page-collapsepane-container').style.zIndex = '-10';
         parent.document.body.querySelector('.d2l-page-collapsepane-shadow').style.zIndex = '-10';
       }
     });
 
-
+    //resets the z-index for the collapsible table of contents in D2L
     $(parent.document.querySelector('.smith-dialog-wrapper')).click(function() {
       if (parent.document.body.querySelector('.d2l-page-collapsepane-container')) {
         parent.document.body.querySelector('.d2l-page-collapsepane-container').style.zIndex = '';
@@ -187,5 +198,3 @@
       }
     })
 })(jQuery);
-
-
